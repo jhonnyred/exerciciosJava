@@ -21,8 +21,7 @@ public class Ac2 {
         int quantia = input.nextInt();
 
         boolean check = false;
-        float peso = 0;
-        float peso2 = 0;
+        float peso, peso2 = 0;
         String nota = "";
         String nota2 = "\n\n\n";
         float valor = 0;
