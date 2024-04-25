@@ -20,10 +20,10 @@ public class Ac2 {
         int quantia = input.nextInt();
 
         boolean check = false;
-        float peso, peso2 = 0;
+        float peso = 0, peso2 = 0;
         String nota = "";
         String nota2 = "\n\n\n";
-        float valor, media = 0;
+        float valor = 0, media = 0;
         // aqui foi necessário criar 2 variáveis para as notas e pesos, basicamente a
         // primeira variavél [nota, peso]
         // são para executar as operações em cada uma das tentativas do for, enquanto a
@@ -48,16 +48,16 @@ public class Ac2 {
             // PESO
             System.out.print("Peso: ");
             peso = input.nextFloat();
-            peso2 = peso2 + peso;
+            peso2 += peso;
 
             // VERIFICACAO DE PESO
             while (check == false) {
                 if (peso2 > 1) {
                     System.out.println("Somatória dos pesos: " + peso2);
                     System.out.print("A somatória dos pesos é maior que 100%, por favor insira um valor menor: ");
-                    peso2 = peso2 - peso;
+                    peso2 -= peso;
                     peso = input.nextFloat();
-                    peso2 = peso2 + peso;
+                    peso2 += peso;
 
                 } else {
                     check = true;
@@ -67,18 +67,18 @@ public class Ac2 {
             // NOTA
             System.out.print("Nota: ");
             valor = input.nextFloat();
-            nota = nota + ": " + valor + " ";
-            nota2 = nota2 + nota + "\n";
+            nota += ": " + valor + " ";
+            nota2 += nota + "\n";
 
             // NOTAS MINIMAS
             if (minima > valor) {
-                nota_menor = nota_menor + nota;
+                nota_menor += nota;
                 prodigio = false;
             }
 
             // MEDIA
-            valor = valor * peso;
-            media = media + valor;
+            valor *= peso;
+            media += valor;
         }
 
         // SAÍDA
